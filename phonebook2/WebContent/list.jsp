@@ -36,13 +36,19 @@
 			<tr>
 				<td>회사(company)</td> <td><%=personList.get(i).getCompany()%></td>			
 			</tr>
+			
+			<tr>
+				<td> <a href="./updateForm.jsp?id=<%=personList.get(i).getPersonId()%>">수정</td> <td> <a href="./delete.jsp?id=<%=personList.get(i).getPersonId()%>">삭제</a> </td>	
+			</tr>
+			
 		</table>
 		<br>
 	<%}%>
 	
 	
 	
-	<a href="">전화번호 등록품</a>
+	<%-- <a href="http://localhost:8000/phonebook2/writeForm.jsp">전화번호 등록품</a> --%>
+	<a href="./writeForm.jsp">전화번호 등록품</a>
 
 
 

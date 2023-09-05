@@ -14,16 +14,22 @@
 	
 	<p>정보를 등록하는 폼입니다. 정보를 등록하고 등록버튼을 누르세요.</p>
 	
-	이름(name): <input type="text"><br>
-	핸드폰(hp): <input type="text"><br>
-	회사(company): <input type="text"><br>
-
-	<button>등록</button>
+	<%-- 여기주소에 insert.jsp를 포함하여 get (엔터치는 효과) --%>
+	
+	<form action="./insert.jsp" method="get">
+		이름(name): <input type="text" name="name" value=""><br>
+		핸드폰(hp): <input type="text" name="hp" value=""><br>
+		회사(company): <input type="text" name="company" value=""><br>
+		
+		<button type="submit">등록</button>
+	</form>
+	
+	
 	
 	<br>
 	<br>
 	
-	<a href="">리스트로 바로가기</a>
+	<a href="http://localhost:8000/phonebook2/list.jsp">리스트로 바로가기</a>
 
 </body>
 </html>
