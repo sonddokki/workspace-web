@@ -27,9 +27,9 @@
 	
 	<%for(int i=0;i<personList.size();i++) {%>
 		<table border="1">
-			<tr>
+			<%--<tr>
 				<td>코드</td> <td><%=personList.get(i).getPersonId()%></td>			
-			</tr>
+			</tr> --%> 
 			<tr>
 				<td>이름(name)</td> <td><%=personList.get(i).getName()%></td>			
 			</tr>

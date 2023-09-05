@@ -27,34 +27,13 @@
 
 	<h1><%=personList.get(code).getName()%> 전화번호 수정화면</h1>
 
-	<p> 수정화면입니다. 아래 항목을 수정하고 "수정" 버튼을 클릭하세요. <p>
-	
-	<table border="1">
-		<tr>
-			<td>코드(id)</td>
-			<td><%=personList.get(code).getPersonId()%></td>
-		</tr>
-		<tr>
-			<td>이름(name)</td>
-			<td><%=personList.get(code).getName()%></td>
-		</tr>
-		<tr>
-			<td>핸드폰(hp)</td>
-			<td><%=personList.get(code).getHp()%></td>
-		</tr>
-		<tr>
-			<td>회사(company)</td>
-			<td><%=personList.get(code).getCompany()%></td>
-		</tr>
-
-	</table>
-	
+	<p> 수정화면입니다. 아래 항목을 수정하고 "수정" 버튼을 클릭하세요. <p>	
 
 	<form action="./update.jsp" method="get">
 		<input type="hidden" name="personId" value="<%=personList.get(code).getPersonId()%>"><br>
-		이름(name): <input type="text" name="name" value=""><br>
-		핸드폰(hp): <input type="text" name="hp" value=""><br>
-		회사(company): <input type="text" name="company" value=""><br>
+		이름(name): <input type="text" name="name" value="<%=personList.get(code).getName()%>"><br>
+		핸드폰(hp): <input type="text" name="hp" value="<%=personList.get(code).getHp()%>"><br>
+		회사(company): <input type="text" name="company" value="<%=personList.get(code).getCompany()%>"><br>
 		
 		<button type="submit">수정</button>
 	</form>
