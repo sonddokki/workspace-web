@@ -28,6 +28,9 @@
 	<%for(int i=0;i<personList.size();i++) {%>
 		<table border="1">
 			<tr>
+				<td>코드</td> <td><%=personList.get(i).getPersonId()%></td>			
+			</tr>
+			<tr>
 				<td>이름(name)</td> <td><%=personList.get(i).getName()%></td>			
 			</tr>
 			<tr>
@@ -38,7 +41,7 @@
 			</tr>
 			
 			<tr>
-				<td> <a href="./updateForm.jsp?id=<%=personList.get(i).getPersonId()%>">수정</td> <td> <a href="./delete.jsp?id=<%=personList.get(i).getPersonId()%>">삭제</a> </td>	
+				<td> <a href="./updateForm.jsp?id=<%=i%>">[수정]</td> <td> <a href="./delete.jsp?id=<%=personList.get(i).getPersonId()%>">[삭제]</a> </td>	
 			</tr>
 			
 		</table>

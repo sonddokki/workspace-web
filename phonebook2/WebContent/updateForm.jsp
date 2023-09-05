@@ -5,8 +5,8 @@
 
 <%
 	// 파라미터 꺼내기 (db에 전달해서 확인할 id값)
-	int personId = Integer.parseInt(request.getParameter("id"));
-	System.out.println(personId);
+	int code = Integer.parseInt(request.getParameter("id"));
+	System.out.println(code);
 	
 	// personDao의 personUpdate(id)를 통해서 id 불러오기
 	PersonDao personDao = new PersonDao();
@@ -25,38 +25,38 @@
 </head>
 <body>
 
-	<h1><%=personList.get(personId-1).getName()%> 전화번호 수정화면</h1>
+	<h1><%=personList.get(code).getName()%> 전화번호 수정화면</h1>
 
 	<p> 수정화면입니다. 아래 항목을 수정하고 "수정" 버튼을 클릭하세요. <p>
 	
 	<table border="1">
 		<tr>
 			<td>코드(id)</td>
-			<td><%=personList.get(personId-1).getPersonId()%></td>
+			<td><%=personList.get(code).getPersonId()%></td>
 		</tr>
 		<tr>
 			<td>이름(name)</td>
-			<td><%=personList.get(personId-1).getName()%></td>
+			<td><%=personList.get(code).getName()%></td>
 		</tr>
 		<tr>
 			<td>핸드폰(hp)</td>
-			<td><%=personList.get(personId-1).getHp()%></td>
+			<td><%=personList.get(code).getHp()%></td>
 		</tr>
 		<tr>
 			<td>회사(company)</td>
-			<td><%=personList.get(personId-1).getCompany()%></td>
+			<td><%=personList.get(code).getCompany()%></td>
 		</tr>
 
 	</table>
-	<br>
+	
 
 	<form action="./update.jsp" method="get">
-		<input type="hidden" name="personId" value="<%=personList.get(personId-1).getPersonId()%>"><br>
+		<input type="hidden" name="personId" value="<%=personList.get(code).getPersonId()%>"><br>
 		이름(name): <input type="text" name="name" value=""><br>
 		핸드폰(hp): <input type="text" name="hp" value=""><br>
 		회사(company): <input type="text" name="company" value=""><br>
 		
-		<button type="submit">등록</button>
+		<button type="submit">수정</button>
 	</form>
 
 
