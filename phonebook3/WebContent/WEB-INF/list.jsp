@@ -5,7 +5,7 @@
     
  <%
  	// request의 어트리뷰트 영역에 있는 data를 꺼내온다.
- 	List<PersonVo> personList = (List<PersonVo>)request.getAttribute("personList");
+ 	List<PersonVo> personList = (List<PersonVo>)request.getAttribute("pList");
  
  %>
  
@@ -51,7 +51,7 @@
 	
 	
 	<%-- <a href="http://localhost:8000/phonebook2/writeForm.jsp">전화번호 등록품</a> --%>
-	<a href="./writeForm.jsp">전화번호 등록품</a>
+	<a href="./PhonebookController?action=wfrom">전화번호 등록품</a>
 
 
 
