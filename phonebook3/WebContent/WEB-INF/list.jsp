@@ -40,8 +40,8 @@
 			</tr>
 			
 			<tr>
-				<td> <a href="">[수정]</td>
-				<td> <a href="">[삭제]</a> </td>	
+				<td> <a href="./pbc?action=uFrom&id=<%=personList.get(i).getPersonId()%>&name=<%=personList.get(i).getName()%>&hp=<%=personList.get(i).getHp()%>&company=<%=personList.get(i).getCompany()%>">[수정]</td>
+				<td> <a href="./pbc?action=delete&id=<%=personList.get(i).getPersonId()%>">[삭제]</a> </td>	
 			</tr>
 			
 		</table>
@@ -51,7 +51,7 @@
 	
 	
 	<%-- <a href="http://localhost:8000/phonebook2/writeForm.jsp">전화번호 등록품</a> --%>
-	<a href="./PhonebookController?action=wfrom">전화번호 등록품</a>
+	<a href="./pbc?action=wfrom">전화번호 등록품</a>
 
 
 

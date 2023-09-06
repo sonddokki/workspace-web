@@ -1,6 +1,7 @@
 package com.javaex.controller;
 
 import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.javaex.dao.PersonDao;
 import com.javaex.vo.PersonVo;
 
-@WebServlet("/PhonebookController")
+@WebServlet("/pbc")
 public class PhonebookController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -53,12 +54,64 @@ public class PhonebookController extends HttpServlet {
 			
 		} else if ("insert".equals(action)) {
 			System.out.println("action=insert");
+			// 저장일때
+			String name = request.getParameter("name");
+			String hp = request.getParameter("hp");
+			String company = request.getParameter("company");
+			// 묶어주기
+			PersonVo personVo = new PersonVo();
+			personVo.setName(name);
+			personVo.setHp(hp);
+			personVo.setCompany(company);
+			// DB에 요청하기
+			PersonDao personDao = new PersonDao();
+			personDao.personInsert(personVo);
+			// 모두 처리됐으면 리스트로 돌아가기
+			response.sendRedirect("./pbc?action=list");
 			
+		} else if ("delete".equals(action)) {
+			System.out.println("action=delete");
+			// 삭제일때
+			int personId = Integer.parseInt(request.getParameter("id"));
+			PersonDao personDao = new PersonDao();
+			personDao.personDelete(personId);
+			// 모두 처리됐으면 리스트로 돌아가기
+			response.sendRedirect("./pbc?action=list");
 			
+		} else if ("uFrom".equals(action)) {
+			// 수정폼
+			System.out.println("action=uFrom");
+			// 기존값들을 빼오기
+			int personId = Integer.parseInt(request.getParameter("id"));
+			String name = request.getParameter("name");
+			String hp = request.getParameter("hp");
+			String company = request.getParameter("company");
+			// 기존값들 묶기
+			PersonVo personVo = new PersonVo(personId , name, hp, company);
+			// 포워드로 묶은값을 업데이트폼의 html에 넣어 출력시키기
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/updateFrom.jsp"); // jsp파일 위치를 적어넣어야함
+			rd.forward(request, response);
+			
+		} else if ("update".equals(action)) {
+			// 수정
+			System.out.println("action=update");
+			int personId = Integer.parseInt(request.getParameter("id"));
+			String name = request.getParameter("name");
+			String hp = request.getParameter("hp");
+			String company = request.getParameter("company");
+			// 수정된 값들 묶기
+			PersonVo personVo = new PersonVo(personId , name, hp, company);
+			// DB에 요청하기
+			PersonDao personDao = new PersonDao();
+			personDao.personUpdate(personVo);
+			// 모두 처리됐으면 리스트로 돌아가기
+			response.sendRedirect("./pbc?action=list");
 			
 		} else {
 			System.out.println("나머지");
 		}
+		
+		
 
 	}
 

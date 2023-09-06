@@ -16,7 +16,7 @@
 	
 	<%-- 여기주소에 insert.jsp를 포함하여 get (엔터치는 효과) --%>
 	
-	<form action="/phonebook3/PhonebookController" method="get">
+	<form action="/phonebook3/pbc" method="get">
 		<input type="hidden" name="action" value="insert">
 		이름(name): <input type="text" name="name" value=""><br>
 		핸드폰(hp): <input type="text" name="hp" value=""><br>
@@ -30,7 +30,7 @@
 	<br>
 	<br>
 	
-	<a href="./PhonebookController?action=list">리스트로 바로가기</a>
+	<a href="./pbc?action=list">리스트로 바로가기</a>
 
 </body>
 </html>
