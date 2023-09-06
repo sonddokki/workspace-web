@@ -78,6 +78,7 @@ public class PhonebookController extends HttpServlet {
 			// 모두 처리됐으면 리스트로 돌아가기
 			response.sendRedirect("./pbc?action=list");
 			
+			
 		} else if ("uFrom".equals(action)) {
 			// 수정폼
 			System.out.println("action=uFrom");
@@ -86,8 +87,7 @@ public class PhonebookController extends HttpServlet {
 			String name = request.getParameter("name");
 			String hp = request.getParameter("hp");
 			String company = request.getParameter("company");
-			// 기존값들 묶기
-			PersonVo personVo = new PersonVo(personId , name, hp, company);
+			
 			// 포워드로 묶은값을 업데이트폼의 html에 넣어 출력시키기
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/updateFrom.jsp"); // jsp파일 위치를 적어넣어야함
 			rd.forward(request, response);

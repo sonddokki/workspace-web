@@ -26,9 +26,7 @@
 	<%for(int i=0;i<personList.size();i++) {%>
 	
 		<table border="1">
-			<%--<tr>
-				<td>코드</td> <td><%=personList.get(i).getPersonId()%></td>			
-			</tr> --%> 
+			
 			<tr>
 				<td>이름(name)</td> <td><%=personList.get(i).getName()%></td>			
 			</tr>
@@ -49,8 +47,6 @@
 	
 	<% }%>
 	
-	
-	<%-- <a href="http://localhost:8000/phonebook2/writeForm.jsp">전화번호 등록품</a> --%>
 	<a href="./pbc?action=wfrom">전화번호 등록품</a>
 
 
