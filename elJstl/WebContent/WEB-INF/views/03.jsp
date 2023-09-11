@@ -31,18 +31,11 @@
 
 	<h4>el 사용</h4>
 	
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
+	id= ${param.id} <br>
+	pw= ${param.pw} <br>
+	name= ${param.name} <br>
+	num1= ${param.num1} <br>
+	num2= ${param.num2} <br>
 
 
 
