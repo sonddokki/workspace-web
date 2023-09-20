@@ -23,6 +23,7 @@
 
 
 
+	/*
 	let name = "global";    // 전역 변수를 선언
 
 	function checkscope() {
@@ -31,8 +32,23 @@
 	}
 	checkscope();                  // 출력 결과: "local"
 	console.log(name);          // 출력 결과: "global"
+	*/
 
+	////////////////////////////////////////////////////////////////////////
 
+	var str = "global";
+
+	function checkscope() {
+		let str = "local"; // 지역 변수
+		let str2 = "로컬"; // 지역 변수를 선언
+		console.log(str);  // 전역 변수가 아닌 지역 변수를 사용
+	}
+	
+	checkscope();                  // 출력 결과: "local"
+	
+	console.log(str);                 // 출력 결과: "local"
+	
+	console.log(str2);
 
 
 </script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<h1>자바스크립트</h1>
+	<h2>리스트개념 (배열 + 객체)</h2>
+
+	<br><br>
+
+
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript">
+
+	console.log("========================================");
+	
+	// 빈배열 생성 --> 리스트를 만들기
+	let personList = [];
+	
+	// 객체를 만들고 데이터 넣기(정우성)
+	let personVo01 = {
+		name:"정우성",
+		password:"1254124124",
+		hp:"010-1111-2222",
+		company:"010-3333-4444"		
+	};
+	
+	// 객체를 만들고 데이터 넣기(박명수)
+	let personVo02 = {};
+	personVo02.name = "박명수";
+	personVo02.hp = "011-5555-6666";
+	personVo02.company = "011-7777-8888";
+	
+	// 객체를 만들고 데이터 넣기(유재석)
+	let personVo03 = {
+		name: "유재석"
+	};
+	personVo03.hp = "011-0000-9999";
+	personVo03.company = "011-7777-8888";
+	
+	// 객체 확인	
+	console.log(personVo01);
+	console.log(personVo02);
+	console.log(personVo03);
+	
+	// 배열에 넣기
+	personList[0]=personVo01;
+	personList[1]=personVo02;
+	personList.push(personVo03);
+	
+	// 출력
+	console.log(personList);
+	
+	console.log(personVo02.company);
+	console.log(personList[1].company);
+
+</script>
+
+</html>

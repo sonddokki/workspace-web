@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<h1>자바스크립트</h1>
+	<h2>객체</h2>
+
+	<br><br>
+
+
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript">
+
+	window.console.log("========================================");
+
+	var guestbookVo = {
+		name: "이병헌",
+		password: "1234",
+		content: "내용.........",
+		showInfo:function(){
+			console.log(this.name + "," + this.password + "," + this.content+"dafafasfasff");
+		}
+	};
+	
+	
+	console.log(guestbookVo.name);
+	console.log(guestbookVo.showInfo());
+
+
+	let guestVo = {};
+	guestVo.name = "정우성";
+	guestVo.password = "1525252135";
+	guestVo.content = "정우성 다녀감";
+	
+	console.log(guestVo.name);
+	console.log(guestVo.content);
+	
+	let si = function(){
+		console.log(this.name + "," + this.password + "," + this.content);
+	}
+	
+	guestVo.showInfo = si;
+	console.log(guestVo.showInfo());
+
+	////////////////////////////////////////////////////////////////////////////
+	console.log(guestVo.name);
+	console.log(guestVo["name"]);
+	
+	
+
+</script>
+
+</html>

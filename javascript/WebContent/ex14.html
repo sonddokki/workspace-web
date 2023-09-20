@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<h1>자바스크립트</h1>
+	<h2>배열</h2>
+
+	<br><br>
+
+
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript">
+
+	window.console.log("========================================");
+
+
+
+	var array = new Array();
+
+	array[0] = 1;
+	array[1] = 100;
+
+	console.log(array[0]);
+	console.log(array[1]);
+
+	window.console.log("========================================");
+
+	var arr02 = [];
+	arr02[0] = 1;
+	arr02[1] = 2.5;
+	arr02[2] = "안녕";
+	arr02[3] = "hello~~!!";
+	arr02[4] = 5 > 3;
+	arr02[5] = function () {console.log("나는 익명함수")};
+
+
+	for (let i = 0; i < arr02.length; i++) {
+		console.log(arr02[i]);
+	}
+
+
+	arr02[5]();
+
+	window.console.log("========================================");
+	var arr03 = [1, 2.5, "안녕",["정우성","유재석","하정우"]];
+	console.log(arr03);
+	
+	
+	console.log(arr03[3][1]);
+
+	window.console.log("========================================");
+	var nameArray = [];
+	nameArray.push("정우성");
+	nameArray.push("박명수");
+	console.log(nameArray);
+	nameArray.push("유재석");
+	console.log(nameArray);
+	
+	nameArray.pop();
+	console.log(nameArray);
+
+
+</script>
+
+</html>
