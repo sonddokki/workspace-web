@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<h1>자바스크립트</h1>
+	<h2>switch문제</h2>
+
+	주어진 과목번호를 통해 강의실 번호를 출력하는 프로그램을 작성하세요(브라우저에 출력)<br>
+	과목 code값이 1이면 “R101호”<br>
+	2이면 “R202호”<br>
+	3이면 “R303호”<br>
+	4이면 “R404호”<br>
+	나머지는 “상담원에게 문의하세요”<br>
+
+
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript">
+	window.console.log("========================================");
+
+	let code = prompt("코드를 입력하세요");
+	console.log(typeof code);
+
+	switch (code) {
+		case "1":
+			console.log("R101호");
+			document.write("R101호");
+			break;
+		case "2":
+			console.log("R102호");
+			document.write("R102호");
+			break;
+		case "3":
+			console.log("R103호");
+			document.write("R103호");
+			break;
+		case "4":
+			console.log("R104호");
+			document.write("R104호");
+			break;
+		default:
+			alert("상담원에게 문의하세요.");
+			break;
+	}
+
+
+</script>
+
+</html>
