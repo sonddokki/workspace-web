@@ -1,53 +1,169 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="./cal.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="./cal.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
 
-<div id="cal">
-	<input id="display" type="text"><br>
-	
-	<div id="btnArea">
-		<button id="btn9" type="button">9</button>
-		<button id="btn8" type="button">8</button>
-		<button id="btn7" type="button">7</button>
-		
-		<button id="btnDiv" type="button">/</button>
-		<br>
-		
-		<button id="btn6" type="button">6</button>
-		<button id="btn5" type="button">5</button>
-		<button id="btn4" type="button">4</button>
-		
-		<button id="btnMulti" type="button">*</button>
-		<br>
-		
-		<button id="btn3" type="button">3</button>
-		<button id="btn2" type="button">2</button>
-		<button id="btn1" type="button">1</button>
-		
-		<button id="btnPlus" type="button">+</button>
-		<br>
-		
-		<button id="btnClear" type="button">C</button>
-		<button id="btn0" type="button">0</button>
-		<button id="btnEqual" type="button">=</button>
-		<button id="btnMinus" type="button">-</button>
-		<br>
+	<div id="cal">
+		<input id="display" type="text"><br>
+
+		<div id="btnArea">
+			<button id="btn9" type="button">9</button>
+			<button id="btn8" type="button">8</button>
+			<button id="btn7" type="button">7</button>
+
+			<button id="btnDiv" type="button">/</button>
+			<br>
+
+			<button id="btn6" type="button">6</button>
+			<button id="btn5" type="button">5</button>
+			<button id="btn4" type="button">4</button>
+
+			<button id="btnMulti" type="button">*</button>
+			<br>
+
+			<button id="btn3" type="button">3</button>
+			<button id="btn2" type="button">2</button>
+			<button id="btn1" type="button">1</button>
+
+			<button id="btnPlus" type="button">+</button>
+			<br>
+
+			<button id="btnClear" type="button">C</button>
+			<button id="btn0" type="button">0</button>
+			<button id="btnEqual" type="button">=</button>
+			<button id="btnMinus" type="button">-</button>
+			<br>
+		</div>
+
+
 	</div>
-	
-	
-</div>
 
 
 </body>
 
+<script type="text/javascript">
 
+	let pDisplay = document.getElementById("display");
+
+	let btn1 = document.getElementById("btn1");
+	let btn2 = document.getElementById("btn2");
+	let btn3 = document.getElementById("btn3");
+	let btn4 = document.getElementById("btn4");
+	let btn5 = document.getElementById("btn5");
+	let btn6 = document.getElementById("btn6");
+	let btn7 = document.getElementById("btn7");
+	let btn8 = document.getElementById("btn8");
+	let btn9 = document.getElementById("btn9");
+	let btn0 = document.getElementById("btn0");
+
+	let btnDiv = document.getElementById("btnDiv");
+	let btnMulti = document.getElementById("btnMulti");
+	let btnPlus = document.getElementById("btnPlus");
+	let btnMinus = document.getElementById("btnMinus");
+	let btnEqual = document.getElementById("btnEqual");
+
+	let btnClear = document.getElementById("btnClear");
+
+	///////////////////////////////////////////////////////////////	
+	btn1.onclick = function () {
+		console.log("1번 출력");
+		pDisplay.value = pDisplay.value+"1";
+	};
+
+	btn2.onclick = function () {
+		console.log("2번 출력");
+		pDisplay.value = pDisplay.value+"2";
+	};
+
+	btn3.onclick = function () {
+		console.log("3번 출력");
+		pDisplay.value = pDisplay.value+"3";
+	};
+
+	btn4.onclick = function () {
+		console.log("4번 출력");
+		pDisplay.value = pDisplay.value+"4";
+	};
+
+	btn5.onclick = function () {
+		console.log("5번 출력");
+		pDisplay.value = pDisplay.value+"5";
+	};
+
+	btn6.onclick = function () {
+		console.log("6번 출력");
+		pDisplay.value = pDisplay.value+"6";
+	};
+
+	btn7.onclick = function () {
+		console.log("7번 출력");
+		pDisplay.value = pDisplay.value+"7";
+	};
+
+	btn8.onclick = function () {
+		console.log("8번 출력");
+		pDisplay.value = pDisplay.value+"8";
+	};
+
+	btn9.onclick = function () {
+		console.log("9번 출력");
+		pDisplay.value = pDisplay.value+"9";
+	};
+
+	btn0.onclick = function () {
+		console.log("0번 출력");
+		pDisplay.value = pDisplay.value+"0";
+	};
+
+	////////////////////////////////////////////////////////////////////
+	btnDiv.onclick = function () {
+		console.log("btnDiv /");
+		pDisplay.value = pDisplay.value+"/";
+	};
+
+	btnMulti.onclick = function () {
+		console.log("btnMulti *");
+		pDisplay.value = pDisplay.value+"*";
+	};
+
+	btnPlus.onclick = function () {
+		console.log("btnPlus +");
+		pDisplay.value = pDisplay.value+"+";
+	};
+
+	btnMinus.onclick = function () {
+		console.log("btnMinus -");
+		pDisplay.value = pDisplay.value+"-";
+	};
+
+	btnEqual.onclick = function () {
+		console.log("btnEqual =");
+		
+		console.log(pDisplay.value);
+		
+		console.log(eval(pDisplay.value));
+		let cal = eval(pDisplay.value);
+		pDisplay.value = cal;
+		
+	};
+
+	btnClear.onclick = function () {
+		console.log("btnClear C");		
+		pDisplay.value = "";
+	};
+
+
+
+
+
+</script>
 
 
 

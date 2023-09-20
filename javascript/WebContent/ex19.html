@@ -15,6 +15,45 @@
 
 <script type="text/javascript">
 
+// 필요한 태그를 js객체화
+let btn = document.getElementsByTagName("button"); // 태그로 가져오기
+console.log(btn);
+
+let inputs = document.getElementsByTagName("input"); // 태그로 가져오기
+console.log(inputs);
+console.log(inputs[0]);
+console.log(inputs[1]);
+
+let tags = document.getElementsByClassName("red");
+console.log(tags);
+console.log(tags[0]);
+console.log(tags[1]);
+
+///////////////////////////////////////////////////////////////////
+// 이벤트 잡기
+
+let btnPlus = document.getElementById("btnPlus");
+let textleft = document.getElementById("left");
+let textright = document.getElementById("right");
+let pDisplay = document.getElementById("display");
+console.log(btnPlus)
+
+btnPlus.onclick = function(){
+	console.log("더하기버튼 클릭");
+	
+	// 왼쪽 input값 읽기
+	let leftNo = parseInt(textleft.value);
+	// 오른쪽 input값 읽기	
+	let rightNo = parseInt(textright.value);
+	// 더하기
+	let sum = leftNo + rightNo;  // 문자열 주의
+	console.log(sum);
+	// 디스플레이 영역에 출력하기
+	pDisplay.innerHTML = sum;
+	
+	
+};
+
 
 </script>
 
