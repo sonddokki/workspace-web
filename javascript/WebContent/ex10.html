@@ -21,15 +21,37 @@
 <script type="text/javascript">
 	window.console.log("========================================");
 
-	<!--기명함수-->
+	// 기명함수
+
+	// 선언 (미리 조사되는 함수)
 	function testA() {
 		console.log("testA() 함수입니다.");
 		document.write("testA() 함수입니다.");
 	}
 
+	// 사용
 	testA();
 	
 	
+	document.write("<br>");
+
+
+
+	//익명함수
+
+	// 선언 
+	let testB = function () {
+		console.log("testB() 함수입니다.");
+		document.write("testB() 함수입니다.");
+	}
+
+
+	testB();  //함수실행
+
+
+	// 사용
+
+
 
 </script>
 

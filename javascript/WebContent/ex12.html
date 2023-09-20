@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<h1>자바스크립트</h1>
+	<h2>변수의 범위</h2>
+
+	<br><br>
+
+
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript">
+	window.console.log("========================================");
+
+
+
+	let name = "global";    // 전역 변수를 선언
+
+	function checkscope() {
+		let name = "local"; // 지역 변수를 선언
+		console.log(name);  // 전역 변수가 아닌 지역 변수를 사용
+	}
+	checkscope();                  // 출력 결과: "local"
+	console.log(name);          // 출력 결과: "global"
+
+
+
+
+</script>
+
+</html>
