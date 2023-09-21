@@ -2,20 +2,75 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="./jquery/jquery-1.12.4.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 	
 	<ul>
-		<li id="first" class="red">첫번째 아이템입니다.</li>
-		<li id="second" class="blue"><strong>두번째 아이템입니다.</strong></li>
-		<li id="third" class="del">세번째아이템입니다.</li>
-		<li><strong>네번째 아이템입니다.</strong></li>
+		<li id="first" class="red" data-bno="1" data-pname="정우성">첫번째 아이템입니다.</li>
+		<li id="second" class="blue" data-bno="2" data-pname="이병헌"><strong>두번째 아이템입니다.</strong></li>
+		<li id="third" class="del" data-bno="3" data-pname="박소담">세번째아이템입니다.</li>
+		<li data-bno="4" data-pname="유해진"><strong>네번째 아이템입니다.</strong></li>
 		
 	</ul>
 	<button id="btn" type="button">li요소추가</button>
+	<button id="datBtn" type="button"> 데이터 읽기 </button>
+	
+	
+	
 </body>
 
+<script type="text/javascript">
+	$("#btn").on("click", function(){
+		console.log("버튼클릭");
+		
+		let str = "";
+		str += "<li data-bno='5' data-pname='황정민'>추가된 다섯번째 아이템입니다.</li>";
+		str += "<li data-bno='6' data-pname='김윤석'>추가된 여섯번째 아이템입니다.</li>";
+		str += "<li data-bno='7' data-pname='이영애'>추가된 일곱번째 아이템입니다.</li>";
+		
+		$("ul").append(str);
+		
+	});
+	
+	$("li").on("click", function(){
+		var $this = $(this);		
+		console.log($this);
+			
+		
+	});
+	
+	
+	$("ul").on("click", "li", function(){
+		var $this = $(this);		
+		console.log("ul클릭");
+		
+		let str = $(this).text();
+				
+		console.log(str);
+	});
+		
+		
+		//$this.remove();
+		
+		
+	// 데이터 수집 버튼클릭
+	$("#datBtn").on("click", function(){
+	console.log("데이터 수집 버튼 클릭");
+	
+	let liTags = $("li");
+	console.log(liTags);
+	
+	let tmp = liTags[0].data("bno");
+	console.log(tmp);
+	
+	
+	
+		
+	});
+	
+	
+</script>
 
 </html>
