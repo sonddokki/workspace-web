@@ -51,12 +51,64 @@
 
 <script type="text/javascript">
 
+	// 풀이 1
+	/*
 	$("button").on("click", function () {
 		
 		if ($(this).text() == "=") {
 			console.log("계산하기");
-			$("#display").val(eval($("#display").val()));
 			
+			$("#display").val(eval($("#display").val()));
+						
+			
+		} else if ($(this).text() == "C") {
+			console.log("비우기");
+			$("#display").val("");
+			
+		} else if ($("#display").val() != "=") {
+			console.log($(this).text() + " 입력");
+			$("#display").val($("#display").val() + $(this).text());
+		}
+	});
+	*/
+	
+	// 풀이 2 (문자열 자르기)
+	$("button").on("click", function () {
+		
+		// 누른 버튼에 표시된 텍스트를 조건문에 넣기
+		if ($(this).text() == "=") {
+			console.log("계산하기");	
+			
+			// 입력칸에서 기호만 추출	
+			console.log($("#display").val().replace(/[0-9]/g,''));
+			
+			// 추출된 기호를 조건문에 넣기			
+			switch ($("#display").val().replace(/[0-9]/g,'')) {
+				case "+":
+					console.log($("#display").val().split('+'));
+					let no1 = $("#display").val().split('+')[0]
+					let no2 = $("#display").val().split('+')[1]			
+					$("#display").val(Number(no1)+Number(no2));			
+				break;
+				case "-":
+					console.log($("#display").val().split('-'));
+					let no3 = $("#display").val().split('-')[0]
+					let no4 = $("#display").val().split('-')[1]			
+					$("#display").val(Number(no3)-Number(no4));			
+				break;
+				case "*":
+					console.log($("#display").val().split('*'));
+					let no5 = $("#display").val().split('*')[0]
+					let no6 = $("#display").val().split('*')[1]			
+					$("#display").val(Number(no5)*Number(no6));			
+				break;
+				case "/":
+					console.log($("#display").val().split('/'));
+					let no7 = $("#display").val().split('/')[0]
+					let no8 = $("#display").val().split('/')[1]			
+					$("#display").val(Number(no7)/Number(no8));			
+				break;
+			}	
 		} else if ($(this).text() == "C") {
 			console.log("비우기");
 			$("#display").val("");
